@@ -2,7 +2,7 @@
 
 Aplikasi web untuk melakukan **analisis sentimen ulasan pengguna MyXL** menggunakan pendekatan **Machine Learning Classification**, dibangun dengan **Streamlit**.
 
-🔗 **Live Demo:** [tambahkan link Streamlit setelah deployment berhasil]
+🔗 **Live Demo:** (https://sentiment-analysis-project-app-myxl-202607.streamlit.app/)
 
 ---
 
