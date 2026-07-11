@@ -285,7 +285,7 @@ slang_dict = {
     'adaaa': 'ada',
     'adaaaaaa': 'ada',
 
-    'tibatiba': 'tiba tiba',
+    'tibatiba': 'tiba tiba'
 }
 
 
