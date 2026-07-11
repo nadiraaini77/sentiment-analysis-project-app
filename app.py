@@ -34,112 +34,258 @@ tfidf = joblib.load("tfidf.pkl")
 # SLANG DICTIONARY
 # ==========================================
 slang_dict = {
+    # PARTIKEL & KONJUNGSI
     'yg': 'yang',
-    'abiss': 'habis',
-    'bangett': 'banget',
-    'ad': 'ada',
-    'adaaa': 'ada',
-    'adaaaaaa': 'ada',
-    'ajaa': 'aja',
-    'lgy': 'lagi',
-    'lagg': 'lag',
-    'ud': 'udah',
-    'pake': 'pakai',
-    'bgd': 'banget',
-    'jaringanx': 'jaringan',
-    'lbh': 'lebih',
-    'tpi': 'tapi',
     'tp': 'tapi',
-    'baguss': 'bagus',
+    'tpi': 'tapi',
+    'jg': 'juga',
+    'dg': 'dengan',
+    'dgn': 'dengan',
+    'sm': 'sama',
+    'krn': 'karena',
+    'karna': 'karena',
+    'dr': 'dari',
+    'dri': 'dari',
+    'trs': 'terus',
+    'trus': 'terus',
+    'jd': 'jadi',
+    'jdi': 'jadi',
+    'bwt': 'buat',
     'utk': 'untuk',
+    'blm': 'belum',
+
+    'klu': 'kalau',
+    'kalo': 'kalau',
+    'klo': 'kalau',
+    'kl': 'kalau',
+    'kalaw': 'kalau',
+
+    'kyk': 'seperti',
+    'kayak': 'seperti',
+    'kaya': 'seperti',
+    'kek': 'seperti',
+
+    'cm': 'cuma',
+    'cmn': 'cuma',
+    'cuman': 'cuma',
+
+    'jgn': 'jangan',
+    'jngn': 'jangan',
+
+    'gitu': 'begitu',
+    'bgtu': 'begitu',
+    'gini': 'begini',
+
+    'knp': 'kenapa',
+    'ko': 'kok',
+    'tak': 'tidak',
+
+    # NEGASI
     'gk': 'tidak',
     'gak': 'tidak',
     'ga': 'tidak',
+    'g': 'tidak',
     'nggak': 'tidak',
     'ngga': 'tidak',
     'enggak': 'tidak',
     'tdk': 'tidak',
     'kaga': 'tidak',
-    'udh': 'sudah',
-    'udah': 'sudah',
-    'jg': 'juga',
-    'bgtu': 'begitu',
-    'abdet': 'update',
-    'msh': 'masih',
-    'ilang': 'hilang',
-    'lg': 'lagi',
-    'jdi': 'jadi',
-    'bgt': 'banget',
-    'bngt': 'banget',
-    'bnget': 'banget',
-    'dri': 'dari',
-    'enang': 'emang',
-    'eror': 'error',
-    'dg': 'dengan',
-    'dgn': 'dengan',
-    'bgn': 'bangun',
-    'blm': 'belum',
-    'sm': 'sama',
-    'krn': 'karena',
-    'dr': 'dari',
-    'trs': 'terus',
+    'kagak': 'tidak',
+    'ngak': 'tidak',
+    'ngk': 'tidak',
+
+    'gada': 'tidak ada',
+    'gaada': 'tidak ada',
+    'gabisa': 'tidak bisa',
+    'gajelas': 'tidak jelas',
+
+
+    # KATA GANTI ORANG
     'lu': 'kamu',
     'loe': 'kamu',
-    'dpt': 'dapat',
-    'dapet': 'dapat',
-    'bkn': 'bukan',
-    'jd': 'jadi',
-    'lalot': 'lambat',
-    'jlek': 'jelek',
-    'aktifa': 'aktif',
-    'skrng': 'sekarang',
-    'manisss': 'manis',
-    'awallll': 'awal',
-    'smpe': 'sampai',
-    'jringan': 'jaringan',
-    'ngeleggg': 'lag',
-    'bettttt': 'banget',
-    'kalaw': 'kalau',
-    'pitur': 'fitur',
-    'bwt': 'buat',
-    'byr': 'bayar',
-    'pke': 'pakai',
-    'pkai': 'pakai',
-    'org': 'orang',
-    'ank': 'anak',
-    'ortu': 'orang tua',
-    'mrk': 'mereka',
+
     'sy': 'saya',
     'sya': 'saya',
     'gw': 'saya',
     'gua': 'saya',
     'gue': 'saya',
+
     'aq': 'aku',
-    'jgn': 'jangan',
-    'jngn': 'jangan',
+
+    'org': 'orang',
+    'ank': 'anak',
+    'ortu': 'orang tua',
+    'mrk': 'mereka',
+
+
+    # KATA KERJA / BENTUK INFORMAL
+    'pake': 'pakai',
+    'pke': 'pakai',
+    'pkai': 'pakai',
+    'pakek': 'pakai',
+    'make': 'pakai',
+    'dipake': 'dipakai',
+
+    'bgn': 'bangun',
+
+    'dpt': 'dapat',
+    'dapet': 'dapat',
+
+    'bkn': 'bukan',
+
+    'bs': 'bisa',
+    'bsa': 'bisa',
+
+    'aja': 'saja',
+    'ajaa': 'saja',
+    'doang': 'saja',
+
+    'liat': 'lihat',
+    'kasi': 'kasih',
+
+    'ilang': 'hilang',
+    'ngilang': 'hilang',
+
+    'nyesel': 'menyesal',
+    'apaan': 'apa',
+    'tau': 'tahu',
+    'bener': 'benar',
+    'benerin': 'perbaiki',
+    'nambah': 'tambah',
+
+    'muter': 'berputar',
+    'murahin': 'murahkan',
+    'adain': 'adakan',
+
+
+    # KATA SIFAT & KEADAAN
+    'baguss': 'bagus',
+
+    'jlek': 'jelek',
+    'bapuk': 'jelek',
+    'burik': 'buruk',
+
+    'lalot': 'lambat',
+    'lelet': 'lambat',
+    'lemot': 'lambat',
+
+    'males': 'malas',
+    'cepet': 'cepat',
+
+    'tetep': 'tetap',
+    'ttp': 'tetap',
+
+    'masi': 'masih',
+    'msh': 'masih',
+
+    'sdkt': 'sedikit',
+    'dikit': 'sedikit',
+
+    'byk': 'banyak',
+    'bnyk': 'banyak',
+
+    'lbh': 'lebih',
+
+    'manisss': 'manis',
+    'awallll': 'awal',
+
+
+    # INTENSIFIER
+    'bgd': 'banget',
+    'bgt': 'banget',
+    'bngt': 'banget',
+    'bnget': 'banget',
+    'bangett': 'banget',
+    'bet': 'banget',
+    'bettttt': 'banget',
+    'amat': 'banget',
+
+
+    # SUDAH
+    'ud': 'sudah',
+    'udh': 'sudah',
+    'udah': 'sudah',
+    'uda': 'sudah',
+    'dah': 'sudah',
+    'sdh': 'sudah',
+
+
+    # LAGI
+    'lg': 'lagi',
+    'lgy': 'lagi',
+    'lgi': 'lagi',
+
+
+    # WAKTU
     'hr': 'hari',
     'hri': 'hari',
     'thn': 'tahun',
     'bln': 'bulan',
-    'byk': 'banyak',
-    'bnyk': 'banyak',
-    'sdkt': 'sedikit',
+
+    'skrng': 'sekarang',
+    'skrg': 'sekarang',
+
+    'smpe': 'sampai',
+    'sampe': 'sampai',
+
+    'ni': 'ini',
+
+
+    # TEKNIS / PRODUK / JARINGAN
+    'abiss': 'habis',
+    'abis': 'habis',
+
+    'eror': 'error',
+
+    'aktifa': 'aktif',
+
+    'jaringanx': 'jaringan',
+    'jringan': 'jaringan',
+
+    'pitur': 'fitur',
+
+    'lagg': 'lag',
+    'ngeleggg': 'lag',
+    'ngelag': 'lag',
+    'ngeleg': 'lag',
+
+    'kouta': 'kuota',
+    'quota': 'kuota',
+
+    'signal': 'sinyal',
+
+    'point': 'poin',
+
+    'rb': 'ribu',
+
+    'abdet': 'update',
+
+    'kepotong': 'terpotong',
+
+    'apk': 'aplikasi',
+
+
+    # LAIN-LAIN
+    'byr': 'bayar',
+
     'mnrt': 'menurut',
     'pdhl': 'padahal',
-    'klu': 'kalau',
-    'kalo': 'kalau',
-    'klo': 'kalau',
-    'kl': 'kalau',
-    'bs': 'bisa',
-    'bsa': 'bisa',
-    'aja': 'saja',
-    'doang': 'saja',
+
     'smoga': 'semoga',
     'moga': 'semoga',
-    'kyk': 'seperti',
-    'cm': 'cuma',
-    'cmn': 'cuma',
-    'sdh': 'sudah'
+
+    'gimana': 'bagaimana',
+
+    'yaa': 'ya',
+    'yah': 'ya',
+
+    'd': 'di',
+
+    'ad': 'ada',
+    'adaaa': 'ada',
+    'adaaaaaa': 'ada',
+
+    'tibatiba': 'tiba tiba',
 }
 
 
@@ -149,9 +295,9 @@ slang_dict = {
 stopword_id = set(nltk_stopwords.words('indonesian'))
 
 custom_stopwords = {
-    'yg', 'aja', 'nih', 'dong', 'btw', 'emang',
-    'nya', 'ya', 'sih', 'min', 'admin', 'pa',
-    'lah', 'mah', 'kok'
+    'nih', 'btw', 'emang', 'nya', 'ya', 'sih', 'min', 'admin', 'mah', 'pa',
+    'deh', 'tuh', 'loh', 'kak', 'iya',
+    'lho', 'bos', 'gan', 'hehe', 'haha', 'hehehe'
 }
 
 stopword_id.update(custom_stopwords)
