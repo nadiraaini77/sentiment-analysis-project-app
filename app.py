@@ -442,13 +442,13 @@ if st.button("Prediksi Sentimen"):
         st.subheader("Hasil Prediksi")
 
         if prediction == "positive":
-            st.success("Sentimen: Positive 😊")
+            st.success("Sentimen: Positive 😊💖")
 
         elif prediction == "negative":
-            st.error("Sentimen: Negative 😞")
+            st.error("Sentimen: Negative 😞💔")
 
         else:
-            st.info("Sentimen: Neutral 😐")
+            st.info("Sentimen: Neutral 😶🎭")
 
         # Tampilkan confidence score
         st.write(f"Confidence Score: **{confidence:.2f}%**")
